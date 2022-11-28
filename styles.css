@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "EthnocentricRg-Regular";
+    src: local('EthnocentricRg-Regular'), url('ethnocentric rg.woff') format('woff');
+}
+
+
+body{
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+}
+
+.leftContainer{
+    position: relative;
+    flex: 0 0 1;
+    width: 33%;
+    height: 100vh;
+    background-image: url("kratos1.jpg");
+    background-position:  center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.logoContainer{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    top: 250px;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: antiquewhite;
+    font-family: 'EthnocentricRg-Regular';
+    
+    
+}
+
+img{
+    max-height: 100%;
+    max-width: 100%; 
+    
+    
+
+    
+}
+
+
+
+.rightContainer{
+    width: 67%;
+    height: 100vh;
+    background-color: blue;
+}
