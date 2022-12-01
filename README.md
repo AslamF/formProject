@@ -8,7 +8,7 @@ The motivation for this project was to implement what I have learned on forms, f
 
 Active Link to the project: (https://aslamf.github.io/formProject/)
 
-
+![image](https://user-images.githubusercontent.com/86327031/205180020-5db7c642-9939-41e0-9164-dd6383ec6765.png)
 
 ## Credits
 
