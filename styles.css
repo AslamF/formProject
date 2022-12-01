@@ -16,11 +16,16 @@ body{
     flex: 0 0 1;
     width: 33%;
     height: 100vh;
-    background-image: url("kratos1.jpg");
+    background-image: url("snow1.jpeg");
     background-position:  center center;
     background-size: cover;
     background-repeat: no-repeat;
     
+}
+.rightContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .logoContainer{
     position: absolute;
@@ -41,16 +46,97 @@ body{
 img{
     max-height: 100%;
     max-width: 100%; 
-    
-    
-
-    
+        
 }
-
-
 
 .rightContainer{
     width: 67%;
     height: 100vh;
-    background-color: blue;
+    background-color: lightgray;
+    
+    
 }
+
+
+
+form{
+    display: grid;
+    position: relative;
+    grid-template-columns: 15%;
+    column-gap: 120px;
+    row-gap: 15px;
+    background-color: whitesmoke;
+    font-family: 'EthnocentricRg-Regular';
+    font-size: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    
+    
+    
+}
+legend{
+    grid-column: span 2;
+    
+}
+input{
+    display: block;
+    width: 275px;
+    border-radius: 5px;
+    height: 20px;
+    background-color: whitesmoke;
+    border:  1px solid #e5e7eb;
+    padding: 5px
+}
+
+.topText, form, .bottomText{
+    padding: 25px;
+    
+}
+
+p{
+    font-family: 'EthnocentricRg-Regular';
+}
+
+.topText{
+    width: 75%;
+}
+
+legend{
+    font-size: 20px;
+    padding: 0%;
+}
+
+button{
+    background: blue;
+    padding: 15px;
+    width: 200px;
+    border-radius: 7px;
+    border: none;
+    color: antiquewhite;
+    font-family: 'EthnocentricRg-Regular';
+    font-size: 12px;
+    box-shadow:  0 2px 5px rgba(0, 0, 0, 0.4);
+}
+em{
+    color: blue;
+}
+
+
+
+
+
+
+
+input:focus{
+    outline: none;
+    border: 1px solid red;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+input:valid:focus{
+    outline: none;
+    border: 1px solid blue;
+}
+
+
+
+

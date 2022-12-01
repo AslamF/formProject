@@ -11,11 +11,54 @@
 <body>
         <div class="leftContainer">
                 <div class="logoContainer">
-                    <img src="odin-lined.png"> GOD OF WAR   
+                    <img src="odin-lined.png"> ODIN  
                 </div>
         </div>
 
         <div class="rightContainer">
+
+                <div class="topText">
+                    <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <em>now</em> to get started.</p>
+                    <p>You <em>know</em> you want to.</p>
+
+                </div>
+                
+                
+                <form method="get" id="information">
+                        
+                        <legend>Let's do this!</legend>
+
+                        <label for="firstName">FIRST NAME
+                            <input type="text" id="firstName" name="firstName" required>
+                        </label>
+                        
+                        <label for="lastName">LAST NAME
+                            <input type="text" id="lastName" name="lastName" required>
+                        </label>
+
+                        <label for="email">EMAIL
+                            <input type="email" id="email" name="email"placeholder="david@example.com"  required pattern="+@email.com" title="Please enter a valid Email"> 
+                        </label>    
+
+                        <label for="number">PHONE NUMBER
+                            <input type="tel" id="number" name="number" required pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="000-000-0000">
+                        </label>    
+
+                        <label for="password">PASSWORD
+                            <input type="password" id="password" name="password" required>
+                        </label>    
+
+                        <label for="confirmPassword">CONFIRM PASSWORD
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        </label>
+               
+                </form>
+
+                <div class="bottomText">
+                    <button type="submit" form="information" value="submit">CREATE ACCOUNT</button>
+                    <p>Already have an account? Log In</p>
+
+                </div>
             
         </div>
 
