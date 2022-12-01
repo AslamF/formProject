@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FormPage</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
         <div class="leftContainer">
                 <div class="logoContainer">
-                    <img src="odin-lined.png"> ODIN  
+                    <img src="./images/odin-lined.png"> 
                 </div>
+                
         </div>
 
         <div class="rightContainer">
@@ -29,50 +29,91 @@
                         <legend>Let's do this!</legend>
 
                         <label for="firstName">FIRST NAME
-                            <input type="text" id="firstName" name="firstName" required>
+                            <input type="text" id="firstName" name="firstName" maxlength="15" required>
                         </label>
                         
                         <label for="lastName">LAST NAME
-                            <input type="text" id="lastName" name="lastName" required>
+                            <input type="text" id="lastName" name="lastName" maxlength="15"required>
                         </label>
 
                         <label for="email">EMAIL
-                            <input type="email" id="email" name="email"placeholder="david@example.com"  required pattern="+@email.com" title="Please enter a valid Email"> 
+                            <input type="email" id="email" name="email"placeholder="david@example.com" required > 
                         </label>    
 
                         <label for="number">PHONE NUMBER
-                            <input type="tel" id="number" name="number" required pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="000-000-0000">
+                            <input type="tel" id="number" name="number" required pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="000-000-0000" maxlength="10">
                         </label>    
 
                         <label for="password">PASSWORD
-                            <input type="password" id="password" name="password" required>
+                            <input type="password" id="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 5 more characters">
+                            <div id="passwordError" class="error"></div>
                         </label>    
 
                         <label for="confirmPassword">CONFIRM PASSWORD
-                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 5 more characters">
+                            <div id="confirmPasswordError" class = "error"></div>
                         </label>
                
                 </form>
 
                 <div class="bottomText">
                     <button type="submit" form="information" value="submit">CREATE ACCOUNT</button>
-                    <p>Already have an account? Log In</p>
+                    <p>Already have an account? <a href="">Log In</a></p>
 
                 </div>
-            
+
+                
         </div>
 
+<script>
+            const password = document.querySelector("#password");
+            const passwordError = document.querySelector("#passwordError");
+            const confirmPassword = document.querySelector("#confirmPassword");
+            const confirmPasswordError = document.querySelector("#confirmPasswordError");
 
+            password.addEventListener("input", function(){
+                if(password.validity.patternMismatch){
+                    const currentValue = password.value;
+                    const regExpCap = /[A-Z]/g;
+                    const regExpDig = /[0-9]/g;
+                    let result = "";
+                    if (regExpCap.test(currentValue)){
+                        result += "";
+                    } else{
+                        result += "Missing at least 1 capital letter.";
+                        result += "\n";
+                    }
+                
 
+                    if (regExpDig.test(currentValue)){
+                        result += "";
+                    } else{
+                        result += "Missing at least 1 number.";
+                        result += "\n";
+                    }
 
+                    if (currentValue.length < 9){
+                        result += "Must be at least 8 characters.";
+                        result += "\n";
+                    } else{
+                        result +="";
+                    }
+                    console.log(result)
+                    passwordError.textContent = result;
+                } else{
+                    passwordError.textContent = "";
+                }
+            });
 
-
-
-
-
-
-
-
-    
+            confirmPassword.addEventListener("input", function(){
+                if (confirmPassword.value !== password.value){
+                    confirmPasswordError.textContent = "Passwords do not match.";
+                }
+                else{
+                    confirmPasswordError.textContent = "";
+                }
+            });      
+</script>        
+        
 </body>
 </html>
